@@ -1,0 +1,55 @@
+==============================================
+TELCO CUSTOMER CHURN PREDICTION - PERFORMANCE REPORT
+==============================================
+
+MODEL PERFORMANCE METRICS
+=========================
+- AUC (Area Under Curve): 0.815
+- F1-Score: 0.595
+- Recall: 0.684
+- Precision: 0.53
+
+CONFUSION MATRIX
+================
+True Negatives: 803
+False Positives: 230
+False Negatives: 118
+True Positives: 256
+
+INTERPRETATION
+==============
+The model successfully identifies 68.4% of actual churners (high recall),
+enabling proactive retention interventions. AUC of 0.815 indicates strong
+discriminative ability to distinguish churners from non-churners.
+
+COMPARATIVE ANALYSIS - LOCAL SHAP PROFILES
+===========================================
+
+PROFILE 1: HIGH CHURN RISK (99.6% Predicted Churn)
+- Tenure: Very new customer (<3 months)
+- Contract: Month-to-month
+- Internet Service: Fiber optic
+- Monthly Charges: High ($85+)
+- Add-on Services: None
+- Key SHAP Drivers: Month-to-month contract (+0.32), Low tenure (+0.18)
+- Action: Immediate engagement within 48 hours
+
+PROFILE 2: LOYAL CUSTOMER (0% Predicted Churn)
+- Tenure: Long-term (36+ months)
+- Contract: 2-year contract
+- Internet Service: DSL
+- Monthly Charges: Moderate ($50-60)
+- Add-on Services: Multiple (security, backup, support)
+- Key SHAP Drivers: Long tenure (-0.35), Long-term contract (-0.22)
+- Action: Maintain relationship and VIP treatment
+
+PROFILE 3: BORDERLINE CASE (50% Predicted Churn)
+- Tenure: Mid-term (6-18 months)
+- Contract: Month-to-month
+- Internet Service: DSL
+- Monthly Charges: Moderate-high
+- Add-on Services: Partial (tech support only)
+- Key SHAP Drivers: Month-to-month (+0.25) vs Tech support (-0.18)
+- Action: Contract conversion offer critical
+
+==============================================
